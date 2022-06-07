@@ -1,0 +1,24 @@
+x = [0:5];
+y = [2.226794e-01   1.726327e-01  1.057983e-01   6.290675e-02 3.940350e-02 2.671259e-02];
+plot(x,y);
+xlabel('number threads (2^x)');
+ylabel('time');
+title ('T(P)')
+hold on;
+grid on;
+figure;
+y2 = [1 y(1)/y(2) y(1)/y(3) y(1)/y(4) y(1)/y(5) y(1)/y(6)];
+plot (x, y2);
+grid on;
+hold on;
+xlabel('number threads (2^x)');
+ylabel('speed-up');
+title ('S(P)');
+figure;
+y3 = [y2(1)/1*100 y2(2)/2*100 y2(3)/4*100 y2(4)/8*100 y2(4)/16*100 y2(4)/32*100];
+plot (x, y3);
+grid on;
+hold on;
+xlabel('number threads (2^x)');
+ylabel('efficiency');
+title ('E(P)');
